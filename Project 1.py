@@ -9,3 +9,8 @@ class City:
         self.name = name
         self.neighbors = neighbors
 
+class Best_Delivery:
+    def __init__(self):
+        self.drivers = []
+        self.cities = {}
+        self.driver_id_counter = 1
