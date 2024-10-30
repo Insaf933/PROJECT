@@ -71,3 +71,8 @@ while True:
                 name = input("Enter driver name: ")
                 start_city = input("Enter driver's start city: ")
                 system.add_driver(name, start_city)
+            elif choice == '3':
+                break
+            else:
+                print("Invalid choice")
+
