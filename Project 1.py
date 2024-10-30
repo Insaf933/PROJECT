@@ -43,9 +43,23 @@ class City:
         new_driver = Driver(f"ID{self.driver_id_counter}", name, start_city)
         self.drivers.append(new_driver)
         self.driver_id_counter += 1
+    def print_neighboring_cities(self, city_name):
+        if city_name in self.cities:
+            print(self.cities[city_name])
 
-
-
+    def print_drivers_delivering_to_city(self, city_name):
+        def bfs(start_city):
+            visited = set()
+            queue = [start_city]
+            while queue:
+                current_city = queue.pop(0)
+                if current_city == city_name:
+                    return True
+                visited.add(current_city)
+                for neighbor in self.cities[current_city]:
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+            return False
 
 system = Best_Delivery()
 while True:
