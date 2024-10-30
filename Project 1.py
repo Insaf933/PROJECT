@@ -9,6 +9,11 @@ class City:
         self.name = name
         self.neighbors = neighbors
 
+class Best_Delivery:
+        def __init__(self):
+            self.drivers = []
+            self.cities = {}
+            self.driver_id_counter = 1
 
     def view_all_drivers(self):
         for driver in self.drivers:
@@ -60,6 +65,9 @@ class City:
                     if neighbor not in visited:
                         queue.append(neighbor)
             return False
+        for driver in self.drivers:
+            if bfs(driver.start_city):
+                print(driver.id, driver.name)
 
 system = Best_Delivery()
 while True:
